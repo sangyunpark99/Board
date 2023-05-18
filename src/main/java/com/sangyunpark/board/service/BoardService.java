@@ -29,4 +29,8 @@ public class BoardService {
     public Optional<Board> boardView(Integer id){
         return boardRepository.findById(id);
     }
+
+    public void delete(Integer id){ // 게시물 삭제
+        boardRepository.deleteById(id);
+    }
 }

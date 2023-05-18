@@ -36,6 +36,13 @@ public class BoardController {
         return "boarddetail";
     }
 
+    @GetMapping("/board/delete")
+    public String boardDelete(Model model, Integer id){
+
+        boardService.delete(id); // 게시물 삭제
+        return "redirect:/board/list";
+    }
+
 
     @PostMapping(value = "/board/write")
     public String boardWrite(Board board){
